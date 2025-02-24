@@ -1,0 +1,9 @@
+sourcecode\FileReader.class
+sourcecode\Piece.class
+sourcecode\PuzzleImageSaver.class
+module-info.class
+sourcecode\Board.class
+com\myapp\Controller.class
+sourcecode\Main.class
+sourcecode\Solver.class
+com\myapp\App.class
