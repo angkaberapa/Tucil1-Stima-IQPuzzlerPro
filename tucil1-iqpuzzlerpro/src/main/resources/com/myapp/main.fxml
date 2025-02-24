@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="600.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.myapp.Controller">
+
+   <children>
+      <!-- ScrollPane (Reduced Height) -->
+      <ScrollPane fx:id="Canvas" layoutX="27.0" layoutY="112.0" prefHeight="343.0" prefWidth="545.0" />
+
+      <!-- Buttons -->
+      <Button fx:id="SolveButton" layoutX="274.0" layoutY="77.0" mnemonicParsing="false" onAction="#solvePuzzle" text="Solve" />
+
+      <Label layoutX="260.0" layoutY="39.0" text="IQ Puzzler Pro" />
+
+      <Button fx:id="UploadFileButton" layoutX="27.0" layoutY="77.0" mnemonicParsing="false" onAction="#uploadTxtFile" text="Upload File" />
+
+      <!-- TextArea for Output Messages (Moved Above Save Buttons) -->
+      <TextArea fx:id="textArea" editable="false" layoutX="27.0" layoutY="461.0" prefHeight="60.0" prefWidth="545.0" style="-fx-font-family: monospace; -fx-font-size: 12px;" wrapText="true" />
+
+      <!-- Save Buttons (Moved Down) -->
+      <Button fx:id="SavePngButton" layoutX="27.0" layoutY="531.0" mnemonicParsing="false" onAction="#saveToPng" text="Save to .png" />
+
+      <Button fx:id="SaveTxtButton" layoutX="117.0" layoutY="531.0" mnemonicParsing="false" onAction="#saveToTxt" text="Save to .txt" />
+
+   </children>
+</AnchorPane>

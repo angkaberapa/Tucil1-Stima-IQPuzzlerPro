@@ -1,6 +1,5 @@
-
+package sourcecode;
 import java.util.List;
-
 
 public class Piece {
     private char[][] shape;
@@ -14,9 +13,7 @@ public class Piece {
                 cols = line.length();
             }
         }
-
         this.shape = new char[rows][cols];
-
         for (int i = 0; i < rows; i++) {
             String line = shape.get(i);
             for (int j = 0; j < cols; j++) {
@@ -33,7 +30,6 @@ public class Piece {
         return shape;
     }
 
-    // Rotate the piece 90 degrees clockwise
     public void rotateClockwise() {
         int rows = shape.length;
         int cols = shape[0].length;
@@ -47,7 +43,6 @@ public class Piece {
         shape = rotated;
     }
 
-    // Mirror the piece horizontally
     public void mirrorHorizontal() {
         int rows = shape.length;
         int cols = shape[0].length;
@@ -60,7 +55,6 @@ public class Piece {
         }
         shape = mirrored;
     }
-    // Print the piece for debugging
     public void printPiece() {
         for (char[] row : shape) {
             System.out.println(new String(row));

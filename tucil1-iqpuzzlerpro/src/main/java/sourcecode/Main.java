@@ -1,3 +1,4 @@
+package sourcecode;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
@@ -28,6 +29,7 @@ public class Main {
                 System.out.println("Apakah anda ingin menyimpan solusi? (ya/tidak)");
                 String save = sc.nextLine();
                 if(save.equals("ya")){
+                    board.saveBoardToTxtFile("../test/" + filename.substring(0,filename.lastIndexOf(".")) + "_solution.txt");
                     PuzzleImageSaver.savePuzzleImage(board, "../test/" + filename.substring(0,filename.lastIndexOf(".")) + "_solution.png");
                 }
             } else {

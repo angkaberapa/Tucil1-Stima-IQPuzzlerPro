@@ -1,3 +1,4 @@
+package sourcecode;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -12,25 +13,23 @@ public class FileReader {
     }
 
     public Board readBoard() {
-        // Read board dimensions
         int N = sc.nextInt();
         int M = sc.nextInt();
         int P = sc.nextInt();
-        sc.nextLine(); // Consume the remaining line
+        sc.nextLine(); 
 
-        // Read board type
         String boardType = sc.nextLine();
         char[][] boardGrid = new char[N][M];
 
         switch (boardType) {
-            case "DEFAULT" -> {
+            case "DEFAULT":
                 for (int i = 0; i < N; i++) {
                     for (int j = 0; j < M; j++) {
-                        boardGrid[i][j] = '*'; // Default fill
+                        boardGrid[i][j] = '*'; 
                     }
                 }
-            }
-            case "CUSTOM" -> { 
+                break;
+            case "CUSTOM":
                 for (int i = 0; i < N; i++) {
                     String line = sc.nextLine();
                     for (int j = 0; j < M; j++) {
@@ -40,11 +39,10 @@ public class FileReader {
                         }   
                     }
                 }
-            }
-            default -> {
+                break;
+            default:
                 System.out.println("Invalid board type!");
                 return null;
-            }
         }
 
         return new Board(boardGrid, P);
@@ -57,7 +55,7 @@ public class FileReader {
 
         while (sc.hasNextLine()) {
             String tempLine = sc.nextLine();
-            if (tempLine.isEmpty()) break; // Empty line = end of input
+            if (tempLine.isEmpty()) break; 
 
             int idx = 0;
             int idx2 = tempLine.length();

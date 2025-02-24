@@ -1,7 +1,12 @@
-import java.awt.*;
+package sourcecode;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
 
 public class PuzzleImageSaver {
@@ -36,7 +41,7 @@ public class PuzzleImageSaver {
         new Color(199, 21, 133),  // Medium Violet Red
     };
 
-    public static void savePuzzleImage(Board board, String filePath) {
+    public static BufferedImage savePuzzleImage(Board board, String filePath) {
         char[][] grid = board.getGrid();
         int rows = grid.length;
         int cols = grid[0].length;
@@ -56,7 +61,7 @@ public class PuzzleImageSaver {
 
                 if (piece != '.') {
                     int index = piece - 'A'; 
-                    g2d.setColor(COLORS[index]);
+                    g2d.setColor(COLORS[index%26]);
                     g2d.fillRect(j * (CELL_SIZE + PADDING) + PADDING, i * (CELL_SIZE + PADDING) + PADDING, CELL_SIZE, CELL_SIZE);
 
                     g2d.setColor(Color.BLACK);
@@ -74,10 +79,13 @@ public class PuzzleImageSaver {
         }
 
         g2d.dispose();
+        return image;
+    }
 
+    public static void saveImageToPdf(BufferedImage image, String filePath){
         try {
             ImageIO.write(image, "png", new File(filePath));
-            System.out.println("Puzzle saved to " + filePath);
+            // System.out.println("Puzzle saved to " + filePath);
         } catch (IOException e) {
             e.printStackTrace();
         }
